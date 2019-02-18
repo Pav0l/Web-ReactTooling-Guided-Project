@@ -7,5 +7,3 @@
 
 # Objectives
   * Learn to use prop-types.
-  * Learn to write a unit test.
-  * Learn to write a UI test.
