@@ -9,6 +9,9 @@ import { Message } from './Container';
 //     );
 //   }
 
+// STATIC methods are not about an particular instance/occurance of the class,
+// its something that is connected to the Class object
+
 //   static propTypes = {
 //     someString: PT.string.isRequired,
 //   }
@@ -21,8 +24,14 @@ export default function NeedLotsOfProps() {
 }
 
 // Specifies the default values for props:
+// You can set these up and then do not need to
+// call them when calling for this Component
+// in other files.
+// So in COntainer.jsx you can delete some of those
+// properties and default values will appear
+// in React Dev Tools.
 NeedLotsOfProps.defaultProps = {
-  optionalArray: [],
+  optionalArray: ['hey'],
   optionalBool: false,
   optionalFunc: Function.prototype,
   optionalNumber: 7,
@@ -65,6 +74,8 @@ NeedLotsOfProps.propTypes = {
   optionalEnum: PT.oneOf(['News', 'Photos']),
 
   // An object that could be one of many types
+  // "I might pass STRING, NUMBER or MESSAGE"
+  // Anything else will throw an error
   optionalUnion: PT.oneOfType([
     PT.string,
     PT.number,
@@ -78,6 +89,8 @@ NeedLotsOfProps.propTypes = {
   optionalObjectOf: PT.objectOf(PT.number),
 
   // An object taking on a particular shape
+  // You can ensure the object kas the right KEYS
+  // but also the right types of VALUES!
   optionalObjectWithShape: PT.shape({
     color: PT.string,
     fontSize: PT.number,
@@ -94,6 +107,7 @@ NeedLotsOfProps.propTypes = {
   // object if the validation fails. Don't `console.warn` or throw, as this
   // won't work inside `oneOfType`.
   customProp: (props, propName, componentName) => {
+    // this just check if the REGEXP condition is met
     if (!/matchme/.test(props[propName])) {
       return new Error(
         'Invalid prop `' + propName + '` supplied to' +

@@ -4,5 +4,9 @@ import Container from './components/Container';
 
 
 ReactDOM.render(
-  <Container />, document.querySelector('#target'),
+  // Go to Container.jsx and define propTypes for someString and someNumber
+  <Container
+    someString=''
+    someNumber={5}
+  />, document.querySelector('#target'),
 );
