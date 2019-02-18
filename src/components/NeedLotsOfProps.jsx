@@ -21,8 +21,14 @@ export default function NeedLotsOfProps() {
 }
 
 // Specifies the default values for props:
+// You can set these up and then do not need to
+// call them when calling for this Component
+// in other files.
+// So in COntainer.jsx you can delete some of those
+// properties and default values will appear
+// in React Dev Tools.
 NeedLotsOfProps.defaultProps = {
-  optionalArray: [],
+  optionalArray: ['hey'],
   optionalBool: false,
   optionalFunc: Function.prototype,
   optionalNumber: 7,
