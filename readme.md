@@ -1,0 +1,11 @@
+# How to Run this App
+  * Clone repository.
+  * Run `npm install` or `yarn install`.
+  * Run `npm run dev` or `yarn run dev`.
+  * Run `npm test` or `yarn test`.
+  * Serve `index.html` using `live-server` or similar.
+
+# Objectives
+  * Learn to use prop-types.
+  * Learn to write a unit test.
+  * Learn to write a UI test.
